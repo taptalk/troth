@@ -1,0 +1,33 @@
+{
+  "name": "@leonardvandriel/troth",
+  "version": "0.0.1",
+  "description": "A simple Promise wrapper for Node.",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taptalk/troth.git"
+  },
+  "keywords": [
+    "Promise"
+  ],
+  "author": "Leo Vandriel",
+  "license": "MIT",
+  "files": [
+    "lib"
+  ],
+  "bugs": {
+    "url": "https://github.com/taptalk/troth/issues"
+  },
+  "homepage": "https://github.com/taptalk/troth#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.4.2"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  }
+}
