@@ -36,7 +36,7 @@ Troth
     Troth.retry(_ => request(), 3, 1.0)
 
     // Run operations in 3 parallel sequences
-    Troth.parallel([..], 3)
+    Troth.serial([..], 3)
 
     // Observe output of promise
     Troth.observe(_ => .., _ => console.log('done'), _ => console.log('fail'))

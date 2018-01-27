@@ -99,10 +99,10 @@ describe('#each', () => {
   })
 })
 
-describe('#parallel', () => {
+describe('#serial', () => {
   it('works', () => {
     const array = []
-    return Troth.parallel([
+    return Troth.serial([
         _ => Troth.then(_ => Troth.sleep(0.01)).then(_ => array.push(1)),
         _ => Troth.then(_ => array.push(2)),
         _ => Troth.then(_ => array.push(3)),
@@ -113,6 +113,19 @@ describe('#parallel', () => {
       a[0].should.equal(3)
       a[1].should.equal(1)
       a[2].should.equal(2)
+    })
+  })
+
+  it('defaults to one thread', () => {
+    const array = []
+    return Troth.serial([
+        _ => Troth.then(_ => Troth.sleep(0.01)).then(_ => array.push(1)),
+        _ => Troth.then(_ => array.push(2)),
+        _ => Troth.then(_ => array.push(3)),
+      ]).then(a => {
+      array[0].should.equal(1)
+      array[1].should.equal(2)
+      array[2].should.equal(3)
     })
   })
 })
